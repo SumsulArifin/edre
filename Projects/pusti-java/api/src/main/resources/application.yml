@@ -1,0 +1,50 @@
+spring:
+  datasource:
+
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: sys as sysdba
+    password: kozukioden1
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+        format_sql: true
+  jackson:
+    date-format: yyyy-MM-dd
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mail:
+    host: smtp.gmail.com
+    username: 
+    password:
+    port: 587
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
+
+hazelcast:
+  network:
+    join:
+      multicast:
+        enabled: true
+  map:
+    default:
+      time-to-live-seconds: 60

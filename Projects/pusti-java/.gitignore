@@ -1,0 +1,6 @@
+secondary-sales/node_modules/
+api/src/main/resources/application.properties
+api/src/main/java/com/tkgroupbd/pusti/api/data/payloads/requests/mastersettings/sales/SoWorkingDayRequest.java
+administration/node_modules/
+administration/build/
+.idea/
